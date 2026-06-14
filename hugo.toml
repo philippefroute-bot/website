@@ -1,11 +1,11 @@
 baseURL = "https://yourusername.github.io/"
 locale = "en-us"
-title = "Professor Name | Economist"
+title = "Dr. Philippe FROUTE | Economist"
 enableRobotsTXT = true
 enableEmoji = false
 
 [params]
-  name        = "Professor Name"
+  name        = "Dr. Philippe FROUTE"
   role        = "Professor of Economics"
   institution = "Your University"
   email       = "your.email@university.edu"
