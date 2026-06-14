@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    {{ with .Params.status }}<span class="status-badge {{ lower . }}">{{ . }}</span>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Date }}<time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
+    {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+    {{ with .Params.journal }}<p class="journal">{{ . }}</p>{{ end }}
+    <div class="entry-links">
+      {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+      {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
+      {{ with .Params.slides }}<a href="{{ . }}" class="link-pill" target="_blank">Slides</a>{{ end }}
+    </div>
+  </div>
+</div>
+
+<div class="container page-body">
+  <article class="prose">
+    {{ .Content }}
+  </article>
+  <div class="post-nav">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" class="link-arrow">&larr; {{ .Title }}</a>{{ end }}
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}" class="link-arrow" style="margin-left:auto">{{ .Title }} &rarr;</a>{{ end }}
+  </div>
+</div>
+{{ end }}

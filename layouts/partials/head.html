@@ -1,0 +1,8 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ site.Params.name }} | Economist{{ else }}{{ .Title }} | {{ site.Params.name }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.bio | truncate 160 }}{{ end }}">
+{{ $css := resources.Get "css/main.css" | minify }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">

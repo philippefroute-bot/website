@@ -1,0 +1,37 @@
+baseURL = "https://yourusername.github.io/"
+locale = "en-us"
+title = "Professor Name | Economist"
+enableRobotsTXT = true
+enableEmoji = false
+
+[params]
+  name        = "Professor Name"
+  role        = "Professor of Economics"
+  institution = "Your University"
+  email       = "your.email@university.edu"
+  photo       = ""       # set to "/img/photo.jpg" once you add your photo
+  cv          = ""       # set to "/files/cv.pdf" once you upload your CV
+  scholar     = ""       # Google Scholar profile URL
+  ssrn        = ""       # SSRN author page URL
+  repec       = ""       # IDEAS/RePEC profile URL
+  researchAreas = ["Law and Economics", "Public Economics", "Public Finance"]
+
+[menu]
+  [[menu.main]]
+    name   = "Research"
+    url    = "/research/"
+    weight = 1
+  [[menu.main]]
+    name   = "Teaching"
+    url    = "/teaching/"
+    weight = 2
+  [[menu.main]]
+    name   = "Blog"
+    url    = "/blog/"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    style = "github"
+  [markup.goldmark.renderer]
+    unsafe = true

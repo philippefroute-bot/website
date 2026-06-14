@@ -1,0 +1,13 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p>&copy; {{ now.Year }} {{ site.Params.name }}. All rights reserved.</p>
+      <div class="footer-links">
+        {{ with site.Params.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
+        {{ with site.Params.scholar }}<a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a>{{ end }}
+        {{ with site.Params.ssrn }}<a href="{{ . }}" target="_blank" rel="noopener">SSRN</a>{{ end }}
+        {{ with site.Params.repec }}<a href="{{ . }}" target="_blank" rel="noopener">RePEc</a>{{ end }}
+      </div>
+    </div>
+  </div>
+</footer>

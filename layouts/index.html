@@ -1,0 +1,88 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-photo">
+      {{ if site.Params.photo }}
+      <img src="{{ site.Params.photo }}" alt="{{ site.Params.name }}">
+      {{ else }}
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="45" r="24" fill="#c5d3e0"/>
+          <ellipse cx="60" cy="105" rx="40" ry="28" fill="#c5d3e0"/>
+        </svg>
+      </div>
+      {{ end }}
+    </div>
+    <div class="hero-bio">
+      <h1>{{ site.Params.name }}</h1>
+      <p class="role">{{ site.Params.role }}</p>
+      <p class="institution">{{ site.Params.institution }}</p>
+      <div class="research-tags">
+        {{ range site.Params.researchAreas }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ with site.Params.email }}
+      <a href="mailto:{{ . }}" class="btn-primary">Contact</a>
+      {{ end }}
+      {{ with site.Params.cv }}
+      <a href="{{ . }}" class="btn-secondary" target="_blank" rel="noopener">Download CV</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="home-bio section-alt">
+  <div class="container">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{ $research := .Site.GetPage "/research" }}
+{{ $teaching := .Site.GetPage "/teaching" }}
+
+<section class="home-highlights">
+  <div class="container highlights-grid">
+    <div class="highlight-card">
+      <h2>Research</h2>
+      {{ with $research }}
+      <p>{{ .Params.summary }}</p>
+      {{ end }}
+      <a href="/research/" class="link-arrow">View publications &rarr;</a>
+    </div>
+    <div class="highlight-card">
+      <h2>Teaching</h2>
+      {{ with $teaching }}
+      <p>{{ .Params.summary }}</p>
+      {{ end }}
+      <a href="/teaching/" class="link-arrow">View courses &rarr;</a>
+    </div>
+    <div class="highlight-card">
+      <h2>Blog</h2>
+      <p>Ideas, commentary, and notes on current research in economics and policy.</p>
+      <a href="/blog/" class="link-arrow">Read posts &rarr;</a>
+    </div>
+  </div>
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ if $posts }}
+<section class="home-posts">
+  <div class="container">
+    <h2 class="section-title">Recent Posts</h2>
+    <div class="post-list">
+      {{ range first 3 $posts }}
+      <article class="post-preview">
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary }}</p>
+        <a href="{{ .RelPermalink }}" class="link-arrow">Read more &rarr;</a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
