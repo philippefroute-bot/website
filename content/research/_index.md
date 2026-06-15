@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "Local Public Finance"
 subtitle: "Law and Economics · Public Economics · Public Finance"
 summary: "Working papers and publications on law and economics, public finance, and regulation."
 ---
