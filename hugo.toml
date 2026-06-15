@@ -1,19 +1,19 @@
 baseURL = "https://yourusername.github.io/"
 locale = "en-us"
-title = "Dr. Philippe FROUTE | Economist"
+title = "Dr. Philippe FROUTÉ | Economist"
 enableRobotsTXT = true
 enableEmoji = false
 
 [params]
-  name        = "Dr. Philippe FROUTE"
+  name        = "Dr. Philippe FROUTÉ"
   role        = "Professor of Economics"
-  institution = "Your University"
-  email       = "your.email@university.edu"
-  photo       = ""       # set to "/img/photo.jpg" once you add your photo
-  cv          = ""       # set to "/files/cv.pdf" once you upload your CV
-  scholar     = ""       # Google Scholar profile URL
+  institution = "Université Paris-Est Créteil - France"
+  email       = "philippe.froute@u-pec.fr"
+  photo       = "/img/pic-2026.jpg"
+  cv          = "/files/CV.pdf"
+  scholar     = "https://scholar.google.com/citations?user=1rcJqkcAAAAJ&hl=en"       # Google Scholar profile URL
   ssrn        = ""       # SSRN author page URL
-  repec       = ""       # IDEAS/RePEC profile URL
+  repec       = "https://ideas.repec.org/e/pfr154.html"       # IDEAS/RePEC profile URL
   researchAreas = ["Law and Economics", "Public Economics", "Public Finance"]
 
 [menu]
