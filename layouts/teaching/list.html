@@ -47,16 +47,29 @@
 
   {{ if $upec }}
   <h2 class="section-heading" style="margin-top:3rem">Courses at UPEC</h2>
+
+  {{ with .Params.upec_program }}
+  <div class="program-banner">
+    <h3 class="program-banner-title">{{ .title }}</h3>
+    <p class="program-banner-desc">{{ .description }}</p>
+    <div class="program-logos">
+      {{ range .partners }}
+      <div class="program-logo-item">
+        <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" loading="lazy">
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
   <div class="entry-list">
     {{ range $upec }}
     <article class="entry">
       <div class="entry-meta">
         {{ with .Params.level }}<span class="status-badge published">{{ . }}</span>{{ end }}
-        {{ with .Params.program }}<span class="journal">{{ . }}</span>{{ end }}
         {{ with .Params.hours }}<span class="status-badge">{{ . }}h</span>{{ end }}
       </div>
       <h3 class="entry-title">{{ .Title }}</h3>
-      {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
       {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
       <div class="entry-links">
         {{ with .Params.syllabus }}<a href="{{ . }}" class="link-pill" target="_blank">Syllabus</a>{{ end }}

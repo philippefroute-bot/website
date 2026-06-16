@@ -2,6 +2,22 @@
 title: "Teaching"
 subtitle: "Graduate and undergraduate courses in Economics and Law"
 summary: "Courses in public economics, law and economics, and econometrics at graduate and undergraduate levels."
+upec_program:
+  title: "Graduate Program — International Transitions and the Enterprise of Tomorrow"
+  description: "An innovative and interdisciplinary doctoral program designed to train future researchers in the field of transitions — digital, environmental, societal, and health-related. The program brings together the AEI International School, the engineering school EPISEN, and three research laboratories of UPEC: LIPHA, IRG and LACL."
+  partners:
+    - name: "UPEC"
+      logo: "/img/partners/upec.svg"
+    - name: "AEI International School"
+      logo: "/img/partners/aei.svg"
+    - name: "EPISEN"
+      logo: "/img/partners/episen.svg"
+    - name: "LIPHA"
+      logo: "/img/partners/lipha.svg"
+    - name: "IRG"
+      logo: "/img/partners/irg.svg"
+    - name: "LACL"
+      logo: "/img/partners/lacl.png"
 ---
 
 I teach economics at both undergraduate and graduate levels, with a particular focus on helping students understand and navigate the major economic, technological, and societal transitions shaping contemporary economies.
