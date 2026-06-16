@@ -673,10 +673,9 @@ body {
 }
 
 .program-logo-item img {
-  max-height: 52px;
-  max-width: 130px;
+  height: 52px;
   width: auto;
-  object-fit: contain;
+  max-width: 220px;
   filter: grayscale(20%);
   transition: filter .2s;
 }
@@ -685,5 +684,5 @@ body {
 
 @media (max-width: 600px) {
   .program-logos { gap: 1rem; }
-  .program-logo-item img { max-height: 40px; max-width: 100px; }
+  .program-logo-item img { height: 38px; max-width: 160px; }
 }

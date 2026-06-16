@@ -1,6 +1,6 @@
 ---
 title: "Teaching"
-subtitle: "Graduate and undergraduate courses in Economics and Law"
+subtitle: "Graduate and undergraduate courses in Economics"
 summary: "Courses in public economics, law and economics, and econometrics at graduate and undergraduate levels."
 upec_program:
   title: "Graduate Program — International Transitions and the Enterprise of Tomorrow"
