@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container page-body">
+  {{ if .Content }}
+  <div class="prose page-intro">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  {{ $issues := .Pages | first 50 }}
+  {{ if $issues }}
+  <div class="journal-issues">
+    {{ range $issues }}
+    <div class="journal-issue-card">
+      {{ with .Params.cover }}
+      <div class="journal-issue-cover">
+        <a href="{{ $.Params.journal_url | default "#" }}" target="_blank" rel="noopener">
+          <img src="{{ . }}" alt="Cover {{ $.Title }}" loading="lazy">
+        </a>
+      </div>
+      {{ end }}
+      <div class="journal-issue-body">
+        <div class="entry-meta">
+          {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+          {{ with .Params.volume }}<span class="journal">Vol. {{ . }}</span>{{ end }}
+          {{ with .Params.number }}<span class="journal">N° {{ . }}</span>{{ end }}
+        </div>
+        <h2 class="journal-issue-title">
+          {{ if .Params.issue_url }}
+            <a href="{{ .Params.issue_url }}" target="_blank" rel="noopener">{{ .Title }}</a>
+          {{ else }}
+            {{ .Title }}
+          {{ end }}
+        </h2>
+        {{ with .Params.description }}<p class="journal-issue-desc">{{ . }}</p>{{ end }}
+        {{ with .Params.articles }}
+        <div class="journal-toc">
+          <h4 class="journal-toc-heading">Table of Contents</h4>
+          <ol class="journal-toc-list">
+            {{ range . }}
+            <li>
+              <span class="toc-title">{{ .title }}</span>
+              {{ with .authors }}<span class="toc-authors"> — {{ delimit . ", " }}</span>{{ end }}
+              {{ with .doi }}<a href="{{ . }}" class="link-pill toc-doi" target="_blank">DOI</a>{{ end }}
+            </li>
+            {{ end }}
+          </ol>
+        </div>
+        {{ end }}
+        <div class="entry-links" style="margin-top:1rem">
+          {{ with .Params.issue_url }}<a href="{{ . }}" class="link-pill" target="_blank">View Issue</a>{{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

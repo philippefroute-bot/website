@@ -641,6 +641,91 @@ body {
   .teaching-logo img { max-width: 140px; }
 }
 
+/* Journal issues */
+.journal-issues {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.journal-issue-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.journal-issue-card:last-child { border-bottom: none; }
+
+.journal-issue-cover {
+  flex-shrink: 0;
+}
+
+.journal-issue-cover img {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+
+.journal-issue-cover img:hover { box-shadow: 0 6px 20px rgba(0,0,0,.22); }
+
+.journal-issue-body { flex: 1; min-width: 0; }
+
+.journal-issue-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin: .4rem 0 .6rem;
+}
+
+.journal-issue-title a { color: inherit; text-decoration: none; }
+.journal-issue-title a:hover { text-decoration: underline; }
+
+.journal-issue-desc {
+  color: var(--text-secondary);
+  font-size: .95rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.journal-toc { margin-top: .75rem; }
+
+.journal-toc-heading {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--text-secondary);
+  margin: 0 0 .5rem;
+}
+
+.journal-toc-list {
+  list-style: decimal;
+  padding-left: 1.4rem;
+  margin: 0;
+}
+
+.journal-toc-list li {
+  font-size: .9rem;
+  color: var(--text);
+  padding: .25rem 0;
+  border-bottom: none;
+  line-height: 1.5;
+}
+
+.toc-title { font-weight: 500; }
+.toc-authors { color: var(--text-secondary); font-style: italic; }
+.toc-doi { font-size: .75rem; padding: .1rem .4rem; margin-left: .4rem; }
+
+@media (max-width: 600px) {
+  .journal-issue-card { flex-direction: column; }
+  .journal-issue-cover img { width: 100px; }
+}
+
 /* Teaching level headings */
 .teaching-level-heading {
   font-family: var(--font-serif);
