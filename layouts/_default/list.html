@@ -13,8 +13,8 @@
   </div>
   {{ end }}
 
-  {{ $articles := where .Pages "Params.book" "ne" true }}
-  {{ $books    := where .Pages "Params.book" true }}
+  {{ $articles := where .Pages "Params.book" "ne" true | first 100 }}
+  {{ $books    := where .Pages "Params.book" true | first 100 }}
 
   {{ if $articles }}
   <h2 class="section-heading">Publications</h2>
@@ -65,8 +65,8 @@
         {{ with .Params.award }}<span class="status-badge award">🏆 {{ . }}</span>{{ end }}
       </div>
       <h3 class="entry-title">
-        {{ if .Params.url }}
-          <a href="{{ .Params.url }}" target="_blank" rel="noopener">{{ .Title }}</a>
+        {{ if .Params.book_url }}
+          <a href="{{ .Params.book_url }}" target="_blank" rel="noopener">{{ .Title }}</a>
         {{ else }}
           {{ .Title }}
         {{ end }}
@@ -74,7 +74,7 @@
       {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
       {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
       <div class="entry-links">
-        {{ with .Params.url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
+        {{ with .Params.book_url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
         {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
       </div>
     </article>
