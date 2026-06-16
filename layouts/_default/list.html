@@ -20,26 +20,33 @@
   <h2 class="section-heading">Publications</h2>
   <div class="entry-list">
     {{ range $articles }}
-    <article class="entry">
-      <div class="entry-meta">
-        {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
-        {{ with .Params.journal }}<span class="journal">{{ . }}</span>{{ end }}
-        {{ with .Params.status }}<span class="status-badge {{ lower . }}">{{ . }}</span>{{ end }}
+    <article class="entry{{ if .Params.cover }} entry-with-cover{{ end }}">
+      {{ with .Params.cover }}
+      <div class="entry-cover">
+        <img src="{{ . }}" alt="Journal cover" loading="lazy">
       </div>
-      <h3 class="entry-title">
-        {{ if .Params.pdf }}
-          <a href="{{ .Params.pdf }}" target="_blank" rel="noopener">{{ .Title }}</a>
-        {{ else }}
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ end }}
-      </h3>
-      {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
-      {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
-      <div class="entry-links">
-        {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
-        {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
-        {{ with .Params.slides }}<a href="{{ . }}" class="link-pill" target="_blank">Slides</a>{{ end }}
-        {{ with .Params.syllabus }}<a href="{{ . }}" class="link-pill" target="_blank">Syllabus</a>{{ end }}
+      {{ end }}
+      <div class="entry-body">
+        <div class="entry-meta">
+          {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+          {{ with .Params.journal }}<span class="journal">{{ . }}</span>{{ end }}
+          {{ with .Params.status }}<span class="status-badge {{ lower . }}">{{ . }}</span>{{ end }}
+        </div>
+        <h3 class="entry-title">
+          {{ if .Params.pdf }}
+            <a href="{{ .Params.pdf }}" target="_blank" rel="noopener">{{ .Title }}</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        </h3>
+        {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+        {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
+        <div class="entry-links">
+          {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+          {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
+          {{ with .Params.slides }}<a href="{{ . }}" class="link-pill" target="_blank">Slides</a>{{ end }}
+          {{ with .Params.syllabus }}<a href="{{ . }}" class="link-pill" target="_blank">Syllabus</a>{{ end }}
+        </div>
       </div>
     </article>
     {{ end }}
