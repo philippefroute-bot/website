@@ -77,6 +77,8 @@
         {{ end }}
       </h3>
       {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+      {{ with .Params.booktitle }}<p class="book-meta">In: <em>{{ . }}</em>{{ with $.Params.editors }}, ed. {{ . }}{{ end }}{{ with $.Params.entry }} — {{ . }}{{ end }}</p>{{ end }}
+      {{ with .Params.series }}<p class="book-meta series">{{ . }}</p>{{ end }}
       {{ with .Params.abstract }}
       <details class="abstract-toggle">
         <summary>Résumé</summary>
