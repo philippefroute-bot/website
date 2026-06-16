@@ -422,6 +422,7 @@ body {
 .status-badge.published       { background: #d4edda; color: #155724; }
 .status-badge.working\ paper  { background: #fff3cd; color: #856404; }
 .status-badge.forthcoming     { background: #d1ecf1; color: #0c5460; }
+.status-badge.award           { background: #fff8e1; color: #7d5a00; border: 1px solid #f0d070; }
 
 .entry-title {
   font-size: 1.05rem;

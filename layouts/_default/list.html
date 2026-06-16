@@ -61,7 +61,8 @@
       <div class="entry-meta">
         {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
         {{ with .Params.publisher }}<span class="journal">{{ . }}</span>{{ end }}
-        {{ with .Params.booktype }}<span class="status-badge forthcoming">{{ . }}</span>{{ end }}
+        {{ with .Params.booktype }}<span class="status-badge published">{{ . }}</span>{{ end }}
+        {{ with .Params.award }}<span class="status-badge award">🏆 {{ . }}</span>{{ end }}
       </div>
       <h3 class="entry-title">
         {{ if .Params.url }}
