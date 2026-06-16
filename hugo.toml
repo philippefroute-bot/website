@@ -7,7 +7,7 @@ buildFuture = true
 
 [params]
   name        = "Dr. Philippe FROUTÉ"
-  role        = "Professor of Economics"
+  role        = "Associate Professor in Economics"
   institution = "Université Paris-Est Créteil - France"
   email       = "philippe.froute@u-pec.fr"
   photo       = "/img/pic-2026.jpg"
