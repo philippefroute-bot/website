@@ -13,8 +13,8 @@
   </div>
   {{ end }}
 
-  {{ $guest  := where .Pages "Params.guest" true  | first 100 }}
-  {{ $upec   := where .Pages "Params.guest" "ne" true | first 100 }}
+  {{ $guest := where .Pages "Params.guest" true | first 100 }}
+  {{ $upec  := (where .Pages "Params.upec" true | first 100).ByWeight }}
 
   {{ if $guest }}
   <h2 class="section-heading">Invited Professor</h2>
@@ -62,12 +62,14 @@
   </div>
   {{ end }}
 
+  {{ range $upec.GroupByParam "level" }}
+  <h4 class="teaching-level-heading">{{ .Key }}</h4>
   <div class="entry-list">
-    {{ range $upec }}
+    {{ range .Pages }}
     <article class="entry">
       <div class="entry-meta">
-        {{ with .Params.level }}<span class="status-badge published">{{ . }}</span>{{ end }}
         {{ with .Params.hours }}<span class="status-badge">{{ . }}h</span>{{ end }}
+        {{ with .Params.program }}<span class="journal">{{ . }}</span>{{ end }}
       </div>
       <h3 class="entry-title">{{ .Title }}</h3>
       {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
@@ -77,6 +79,7 @@
     </article>
     {{ end }}
   </div>
+  {{ end }}
   {{ end }}
 </div>
 {{ end }}

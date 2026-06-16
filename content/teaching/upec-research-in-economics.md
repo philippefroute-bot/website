@@ -1,6 +1,7 @@
 ---
 title: "Research in Economics"
 date: 2024-09-01
+weight: 20
 guest: false
 upec: true
 level: "Doctoral"

@@ -1,6 +1,7 @@
 ---
 title: "Epistemology"
 date: 2024-09-01
+weight: 10
 guest: false
 upec: true
 level: "Doctoral"

@@ -641,6 +641,18 @@ body {
   .teaching-logo img { max-width: 140px; }
 }
 
+/* Teaching level headings */
+.teaching-level-heading {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 2rem 0 .5rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--border);
+}
+
 /* Program banner */
 .program-banner {
   background: linear-gradient(135deg, #f0f4ff 0%, #fafbfd 100%);
