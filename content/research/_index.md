@@ -1,7 +1,7 @@
 ---
 title: "Research"
 subtitle: "Law and Economics · Public Economics · Public Finance · Transitions Economics"
-summary: "Research on institutional transitions, law and economics, public finance, and the economics of AI and organizational change."
+summary: "Publications spanning law and economics, public finance, and transitions economics — from spatial effects of local borrowing and sovereign debt to the economic analysis of AI and bankruptcy law."
 ---
 
 I am an economist of institutional and international transitions. My research investigates how societies, organizations, and public institutions adapt to major technological, geopolitical, demographic, and economic transformations.

@@ -1,7 +1,7 @@
 ---
 title: "Teaching"
 subtitle: "Graduate and undergraduate courses in Economics"
-summary: "Courses in public economics, law and economics, and econometrics at graduate and undergraduate levels."
+summary: "Guest professor at universities in Taiwan, Germany, Switzerland, and China. At UPEC, coordinator of the doctoral Graduate Program in International Transitions, with courses from Licence to Master level."
 upec_program:
   title: "Graduate Program — International Transitions and the Enterprise of Tomorrow"
   description: "An innovative and interdisciplinary doctoral program designed to train future researchers in the field of transitions — digital, environmental, societal, and health-related. The program brings together the AEI International School, the engineering school EPISEN, and three research laboratories of UPEC: LIPHA, IRG and LACL."
