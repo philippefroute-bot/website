@@ -40,7 +40,12 @@
           {{ end }}
         </h3>
         {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
-        {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
+        {{ with .Params.abstract }}
+        <details class="abstract-toggle">
+          <summary>Abstract</summary>
+          <p class="abstract">{{ . }}</p>
+        </details>
+        {{ end }}
         <div class="entry-links">
           {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
           {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
@@ -72,7 +77,12 @@
         {{ end }}
       </h3>
       {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
-      {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
+      {{ with .Params.abstract }}
+      <details class="abstract-toggle">
+        <summary>Résumé</summary>
+        <p class="abstract">{{ . }}</p>
+      </details>
+      {{ end }}
       <div class="entry-links">
         {{ with .Params.book_url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
         {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}

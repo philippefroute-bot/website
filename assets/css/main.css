@@ -441,8 +441,40 @@ body {
 .abstract {
   font-size: .93rem;
   color: #4a5568;
-  margin-bottom: .6rem;
+  margin-top: .6rem;
+  margin-bottom: 0;
+  line-height: 1.65;
 }
+
+.abstract-toggle {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.abstract-toggle summary {
+  font-family: var(--font-sans);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.abstract-toggle summary::before {
+  content: "▶";
+  font-size: .65rem;
+  transition: transform .15s;
+}
+
+.abstract-toggle[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.abstract-toggle summary:hover { color: var(--accent-hover); }
 
 .entry-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
 
