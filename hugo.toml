@@ -14,7 +14,7 @@ enableEmoji = false
   scholar     = "https://scholar.google.com/citations?user=1rcJqkcAAAAJ&hl=en"       # Google Scholar profile URL
   ssrn        = ""       # SSRN author page URL
   repec       = "https://ideas.repec.org/e/pfr154.html"       # IDEAS/RePEC profile URL
-  researchAreas = ["Law and Economics", "Public Economics", "Public Finance"]
+  researchAreas = ["Law and Economics", "Public Economics", "Public Finance", "Transitions Economics"]
 
 [menu]
   [[menu.main]]
