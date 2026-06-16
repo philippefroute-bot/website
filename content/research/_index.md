@@ -13,7 +13,3 @@ My recent work focuses on international transitions, the transformation of organ
 I lead the multidisciplinary graduate program on International Transitions and the Firm of Tomorrow at the AEI International School of Université Paris-Est Créteil and contribute to the development of research activities on international transitions within the LIPHA research laboratory.
 
 Having obtained my Habilitation à Diriger des Recherches (HDR), I supervise doctoral research and develop interdisciplinary collaborations at the interface of economics, management, law, and international studies. Through my research, I seek to better understand how institutions, organizations, and education systems can foster resilience, adaptation, and innovation in periods of profound technological and societal change.
-
----
-
-## Publications

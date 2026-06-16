@@ -13,9 +13,13 @@
   </div>
   {{ end }}
 
-  {{ if .Pages }}
+  {{ $articles := where .Pages "Params.book" "ne" true }}
+  {{ $books    := where .Pages "Params.book" true }}
+
+  {{ if $articles }}
+  <h2 class="section-heading">Publications</h2>
   <div class="entry-list">
-    {{ range .Pages }}
+    {{ range $articles }}
     <article class="entry">
       <div class="entry-meta">
         {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
@@ -31,12 +35,39 @@
       </h3>
       {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
       {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
-      {{ with .Summary }}{{ if not $.Params.abstract }}<p>{{ . }}</p>{{ end }}{{ end }}
       <div class="entry-links">
         {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
         {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
         {{ with .Params.slides }}<a href="{{ . }}" class="link-pill" target="_blank">Slides</a>{{ end }}
         {{ with .Params.syllabus }}<a href="{{ . }}" class="link-pill" target="_blank">Syllabus</a>{{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if $books }}
+  <h2 class="section-heading" style="margin-top:3rem">Books</h2>
+  <div class="entry-list">
+    {{ range $books }}
+    <article class="entry">
+      <div class="entry-meta">
+        {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+        {{ with .Params.publisher }}<span class="journal">{{ . }}</span>{{ end }}
+        {{ with .Params.booktype }}<span class="status-badge forthcoming">{{ . }}</span>{{ end }}
+      </div>
+      <h3 class="entry-title">
+        {{ if .Params.url }}
+          <a href="{{ .Params.url }}" target="_blank" rel="noopener">{{ .Title }}</a>
+        {{ else }}
+          {{ .Title }}
+        {{ end }}
+      </h3>
+      {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+      {{ with .Params.abstract }}<p class="abstract">{{ . | truncate 300 }}</p>{{ end }}
+      <div class="entry-links">
+        {{ with .Params.url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
+        {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
       </div>
     </article>
     {{ end }}

@@ -29,6 +29,10 @@ enableEmoji = false
     name   = "Blog"
     url    = "/blog/"
     weight = 3
+  [[menu.main]]
+    name   = "Int. Transitions"
+    url    = "/journal/"
+    weight = 4
 
 [markup]
   [markup.highlight]
