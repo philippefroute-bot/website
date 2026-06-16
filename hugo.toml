@@ -3,6 +3,7 @@ locale = "en-us"
 title = "Dr. Philippe FROUTÉ | Economist"
 enableRobotsTXT = true
 enableEmoji = false
+buildFuture = true
 
 [params]
   name        = "Dr. Philippe FROUTÉ"
