@@ -586,3 +586,57 @@ body {
     border-bottom: 1px solid rgba(255,255,255,.07);
   }
 }
+
+/* Teaching page */
+.teaching-guest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.teaching-guest-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafbfd;
+}
+
+.teaching-logo {
+  flex-shrink: 0;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teaching-logo img {
+  width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.teaching-guest-body { flex: 1; min-width: 0; }
+
+.teaching-guest-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.teaching-institution {
+  color: var(--text-secondary);
+  margin: .25rem 0 .5rem;
+  font-size: .95rem;
+}
+
+@media (max-width: 600px) {
+  .teaching-guest-card { flex-direction: column; }
+  .teaching-logo { width: 100%; }
+  .teaching-logo img { max-width: 140px; }
+}

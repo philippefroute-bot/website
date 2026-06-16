@@ -1,0 +1,69 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container page-body">
+  {{ if .Content }}
+  <div class="prose page-intro">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  {{ $guest  := where .Pages "Params.guest" true  | first 100 }}
+  {{ $upec   := where .Pages "Params.guest" "ne" true | first 100 }}
+
+  {{ if $guest }}
+  <h2 class="section-heading">Invited Professor</h2>
+  <div class="teaching-guest-list">
+    {{ range $guest }}
+    <div class="teaching-guest-card">
+      {{ with .Params.logo }}
+      <div class="teaching-logo">
+        <img src="{{ . }}" alt="{{ $.Params.institution }} logo" loading="lazy">
+      </div>
+      {{ end }}
+      <div class="teaching-guest-body">
+        <div class="teaching-guest-meta">
+          {{ if .Date }}<time>{{ .Date.Format "January 2006" }}</time>{{ end }}
+          {{ with .Params.level }}<span class="status-badge published">{{ . }}</span>{{ end }}
+          {{ with .Params.hours }}<span class="status-badge">{{ . }}h</span>{{ end }}
+        </div>
+        <h3 class="entry-title">{{ .Title }}</h3>
+        <p class="teaching-institution">
+          <strong>{{ .Params.institution }}</strong>
+          {{ with .Params.city }} — {{ . }}{{ end }}
+        </p>
+        {{ with .Params.program }}<p class="book-meta">Programme : {{ . }}</p>{{ end }}
+        {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if $upec }}
+  <h2 class="section-heading" style="margin-top:3rem">Courses at UPEC</h2>
+  <div class="entry-list">
+    {{ range $upec }}
+    <article class="entry">
+      <div class="entry-meta">
+        {{ with .Params.level }}<span class="status-badge published">{{ . }}</span>{{ end }}
+        {{ with .Params.program }}<span class="journal">{{ . }}</span>{{ end }}
+        {{ with .Params.hours }}<span class="status-badge">{{ . }}h</span>{{ end }}
+      </div>
+      <h3 class="entry-title">{{ .Title }}</h3>
+      {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+      <div class="entry-links">
+        {{ with .Params.syllabus }}<a href="{{ . }}" class="link-pill" target="_blank">Syllabus</a>{{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
