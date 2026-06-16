@@ -28,7 +28,7 @@
       {{ end }}
       <div class="teaching-guest-body">
         <div class="teaching-guest-meta">
-          {{ if .Date }}<time>{{ .Date.Format "January 2006" }}</time>{{ end }}
+          {{ if .Params.period }}<time>{{ .Params.period }}</time>{{ else if .Date }}<time>{{ .Date.Format "January 2006" }}</time>{{ end }}
           {{ with .Params.level }}<span class="status-badge published">{{ . }}</span>{{ end }}
           {{ with .Params.hours }}<span class="status-badge">{{ . }}h</span>{{ end }}
         </div>
