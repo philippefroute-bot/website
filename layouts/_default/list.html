@@ -62,32 +62,39 @@
   <h2 class="section-heading" style="margin-top:3rem">Books</h2>
   <div class="entry-list">
     {{ range $books }}
-    <article class="entry">
-      <div class="entry-meta">
-        {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
-        {{ with .Params.publisher }}<span class="journal">{{ . }}</span>{{ end }}
-        {{ with .Params.booktype }}<span class="status-badge published">{{ . }}</span>{{ end }}
-        {{ with .Params.award }}<span class="status-badge award">🏆 {{ . }}</span>{{ end }}
+    <article class="entry{{ if .Params.cover }} entry-with-cover{{ end }}">
+      {{ with .Params.cover }}
+      <div class="entry-cover">
+        <img src="{{ . }}" alt="Book cover" loading="lazy">
       </div>
-      <h3 class="entry-title">
-        {{ if .Params.book_url }}
-          <a href="{{ .Params.book_url }}" target="_blank" rel="noopener">{{ .Title }}</a>
-        {{ else }}
-          {{ .Title }}
-        {{ end }}
-      </h3>
-      {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
-      {{ with .Params.booktitle }}<p class="book-meta">In: <em>{{ . }}</em>{{ with $.Params.editors }}, ed. {{ . }}{{ end }}{{ with $.Params.entry }} — {{ . }}{{ end }}</p>{{ end }}
-      {{ with .Params.series }}<p class="book-meta series">{{ . }}</p>{{ end }}
-      {{ with .Params.abstract }}
-      <details class="abstract-toggle">
-        <summary>Résumé</summary>
-        <p class="abstract">{{ . }}</p>
-      </details>
       {{ end }}
-      <div class="entry-links">
-        {{ with .Params.book_url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
-        {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+      <div class="entry-body">
+        <div class="entry-meta">
+          {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+          {{ with .Params.publisher }}<span class="journal">{{ . }}</span>{{ end }}
+          {{ with .Params.booktype }}<span class="status-badge published">{{ . }}</span>{{ end }}
+          {{ with .Params.award }}<span class="status-badge award">🏆 {{ . }}</span>{{ end }}
+        </div>
+        <h3 class="entry-title">
+          {{ if .Params.book_url }}
+            <a href="{{ .Params.book_url }}" target="_blank" rel="noopener">{{ .Title }}</a>
+          {{ else }}
+            {{ .Title }}
+          {{ end }}
+        </h3>
+        {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+        {{ with .Params.booktitle }}<p class="book-meta">In: <em>{{ . }}</em>{{ with .Params.editors }}, ed. {{ . }}{{ end }}{{ with .Params.entry }} — {{ . }}{{ end }}</p>{{ end }}
+        {{ with .Params.series }}<p class="book-meta series">{{ . }}</p>{{ end }}
+        {{ with .Params.abstract }}
+        <details class="abstract-toggle">
+          <summary>Résumé</summary>
+          <p class="abstract">{{ . }}</p>
+        </details>
+        {{ end }}
+        <div class="entry-links">
+          {{ with .Params.book_url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
+          {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+        </div>
       </div>
     </article>
     {{ end }}
