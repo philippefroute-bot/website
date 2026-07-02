@@ -7,12 +7,15 @@
 </div>
 
 <div class="container page-body">
+
+  {{/* 1. Description + Scope */}}
   {{ if .Content }}
   <div class="prose page-intro">
     {{ .Content }}
   </div>
   {{ end }}
 
+  {{/* 2. Published Issues */}}
   {{ $issues := .Pages.ByDate.Reverse | first 50 }}
   {{ if $issues }}
   <div class="journal-issues">
@@ -43,7 +46,7 @@
             {{ .Title }}
           {{ end }}
         </h2>
-        {{ with .Params.description }}<p class="journal-issue-desc">{{ . }}</p>{{ end }}
+        {{ if .Content }}<div class="journal-issue-desc">{{ .Content }}</div>{{ end }}
         {{ with .Params.articles }}
         <div class="journal-toc">
           <h4 class="journal-toc-heading">Table of Contents</h4>
@@ -66,5 +69,45 @@
     {{ end }}
   </div>
   {{ end }}
+
+  {{/* 3. Submit */}}
+  {{ with .Params.submit_url }}
+  <div class="journal-submit-block">
+    <h2>Submit an Article</h2>
+    <p>Manuscript submissions are managed through the journal's online platform. Please consult the <a href="{{ . }}" target="_blank" rel="noopener">submission guidelines</a> for instructions on manuscript preparation and the review process.</p>
+    <a href="{{ . }}" class="link-pill" target="_blank" rel="noopener">Submit a manuscript</a>
+  </div>
+  {{ end }}
+
+  {{/* 4. Editorial Board — compact, at the bottom */}}
+  {{ if .Params.editors_in_chief }}
+  <div class="editorial-board">
+    <h2>Editorial Board</h2>
+
+    <h3 class="eb-heading">Editors-in-Chief</h3>
+    <ul class="eb-leaders">
+      {{ range .Params.editors_in_chief }}
+      <li><strong>{{ .name }}</strong> — {{ .role }}</li>
+      {{ end }}
+    </ul>
+
+    {{ with .Params.managing_editor }}
+    <h3 class="eb-heading">Managing Editor</h3>
+    <ul class="eb-leaders">
+      <li><strong>{{ .name }}</strong> — {{ .role }}</li>
+    </ul>
+    {{ end }}
+
+    {{ with .Params.scientific_committee }}
+    <h3 class="eb-heading">Scientific Committee</h3>
+    <ul class="eb-committee">
+      {{ range . }}
+      <li><strong>{{ .name }}</strong> · {{ .info }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  {{ end }}
+
 </div>
 {{ end }}

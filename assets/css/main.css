@@ -737,6 +737,73 @@ body {
   .journal-issue-cover img { width: 100px; }
 }
 
+/* Journal submit block */
+.journal-submit-block {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+}
+.journal-submit-block h2 {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: .5rem;
+}
+.journal-submit-block p {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .75rem;
+}
+
+/* Editorial board — compact */
+.editorial-board {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.editorial-board h2 {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+.eb-heading {
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  margin: 1.25rem 0 .4rem;
+}
+.eb-leaders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.eb-leaders li {
+  font-size: .88rem;
+  line-height: 1.5;
+  margin-bottom: .3rem;
+  color: var(--text);
+}
+.eb-committee {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .2rem 2rem;
+}
+.eb-committee li {
+  font-size: .82rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  .eb-committee { grid-template-columns: 1fr; }
+}
+
 /* Teaching level headings */
 .teaching-level-heading {
   font-family: var(--font-serif);
