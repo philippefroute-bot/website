@@ -1,6 +1,7 @@
 ---
 title: "Spatial effects of French local government borrowing"
 date: 2021-01-01
+weight: 20
 status: "Published"
 journal: "Revue d'Économie Politique, Vol. 131(1), 2021"
 coauthors: []

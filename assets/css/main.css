@@ -355,11 +355,13 @@ body {
 
 /* ── Entry list (research / teaching) ─────────────────────────────────── */
 .entry-list { display: grid; gap: 2rem; }
+.entry-list--compact { gap: 1.1rem; }
 
 .entry {
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
+.entry-list--compact .entry { padding-bottom: 1.1rem; }
 .entry:last-child { border-bottom: none; }
 
 .entry-with-cover {
@@ -430,6 +432,11 @@ body {
   margin-bottom: .3rem;
   line-height: 1.4;
 }
+.entry-list--compact .entry-title { font-size: .97rem; }
+.entry-list--compact .entry-meta { margin-bottom: .25rem; }
+.entry-list--compact .coauthors { margin-bottom: .2rem; }
+.entry-list--compact .entry-links { margin-top: .4rem; }
+.entry-list--compact .abstract-toggle { margin-top: .3rem; margin-bottom: .2rem; }
 
 .coauthors {
   font-family: var(--font-sans);

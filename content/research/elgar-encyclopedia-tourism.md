@@ -1,6 +1,7 @@
 ---
 title: "Tourism and hospitality: Corporate entrepreneurship for resilience and growth"
 date: 2026-01-01
+weight: 10
 book: true
 booktype: "Book Chapter"
 publisher: "Edward Elgar Publishing, 2026"

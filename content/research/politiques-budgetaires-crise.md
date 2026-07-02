@@ -1,6 +1,7 @@
 ---
 title: "Les politiques budgétaires dans la crise : Comprendre les enjeux actuels et les défis futurs"
 date: 2013-01-01
+weight: 30
 book: true
 booktype: "Co-authored"
 publisher: "De Boeck, 2013"

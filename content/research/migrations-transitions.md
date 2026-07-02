@@ -1,6 +1,7 @@
 ---
 title: "Migrations et transitions"
 date: 2025-01-01
+weight: 20
 book: true
 booktype: "Co-edited"
 publisher: "EMS Éditions, 2025"

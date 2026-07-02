@@ -1,6 +1,7 @@
 ---
 title: "Macroeconomic fundamentals and sovereign spreads in the euro area: a regime-switching approach"
 date: 2011-06-01
+weight: 30
 status: "Published"
 journal: "Revue économique, 62(6), 2011"
 coauthors: ["Olivier Damette", "Gilles Dufrénot"]

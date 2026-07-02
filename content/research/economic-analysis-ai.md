@@ -1,6 +1,7 @@
 ---
 title: "Economic Analysis in the Age of Artificial Intelligence"
 date: 2025-01-01
+weight: 10
 status: "Published"
 journal: "International Transitions, Vol. 3(1), 2025"
 coauthors: ["Kurosh Madani", "Olivier Meier"]

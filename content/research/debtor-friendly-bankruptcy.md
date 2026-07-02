@@ -1,6 +1,7 @@
 ---
 title: "Theoretical foundation for a debtor-friendly bankruptcy law in favour of creditors"
 date: 2007-01-01
+weight: 60
 status: "Published"
 journal: "European Journal of Law and Economics, 24, 2007"
 coauthors: []

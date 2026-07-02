@@ -1,0 +1,121 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="container page-body">
+  {{ if .Content }}
+  <div class="issue-body-wrap collapsed">
+    <div class="prose page-intro">{{ .Content }}</div>
+    <div class="issue-fade"></div>
+  </div>
+  <button class="issue-read-more" type="button" style="margin-bottom:1.75rem">Read more</button>
+  {{ end }}
+
+  {{ $articles := first 100 (where .Pages "Params.book" "ne" true).ByWeight }}
+  {{ $books    := first 100 (where .Pages "Params.book" true).ByWeight }}
+
+  {{ if $articles }}
+  <h2 class="section-heading">Publications</h2>
+  <div class="entry-list entry-list--compact">
+    {{ range $articles }}
+    <article class="entry{{ if .Params.cover }} entry-with-cover{{ end }}">
+      {{ with .Params.cover }}
+      <div class="entry-cover">
+        <img src="{{ . }}" alt="Journal cover" loading="lazy">
+      </div>
+      {{ end }}
+      <div class="entry-body">
+        <div class="entry-meta">
+          {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+          {{ with .Params.journal }}<span class="journal">{{ . }}</span>{{ end }}
+          {{ with .Params.status }}<span class="status-badge {{ lower . }}">{{ . }}</span>{{ end }}
+        </div>
+        <h3 class="entry-title">
+          {{ if .Params.pdf }}
+            <a href="{{ .Params.pdf }}" target="_blank" rel="noopener">{{ .Title }}</a>
+          {{ else }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        </h3>
+        {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+        {{ with .Params.abstract }}
+        <details class="abstract-toggle">
+          <summary>Abstract</summary>
+          <p class="abstract">{{ . }}</p>
+        </details>
+        {{ end }}
+        <div class="entry-links">
+          {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+          {{ with .Params.ssrn }}<a href="{{ . }}" class="link-pill" target="_blank">SSRN</a>{{ end }}
+          {{ with .Params.slides }}<a href="{{ . }}" class="link-pill" target="_blank">Slides</a>{{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if $books }}
+  <h2 class="section-heading" style="margin-top:2.5rem">Books</h2>
+  <div class="entry-list entry-list--compact">
+    {{ range $books }}
+    <article class="entry{{ if .Params.cover }} entry-with-cover{{ end }}">
+      {{ with .Params.cover }}
+      <div class="entry-cover">
+        <img src="{{ . }}" alt="Book cover" loading="lazy">
+      </div>
+      {{ end }}
+      <div class="entry-body">
+        <div class="entry-meta">
+          {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
+          {{ with .Params.publisher }}<span class="journal">{{ . }}</span>{{ end }}
+          {{ with .Params.booktype }}<span class="status-badge published">{{ . }}</span>{{ end }}
+          {{ with .Params.award }}<span class="status-badge award">🏆 {{ . }}</span>{{ end }}
+        </div>
+        <h3 class="entry-title">
+          {{ if .Params.book_url }}
+            <a href="{{ .Params.book_url }}" target="_blank" rel="noopener">{{ .Title }}</a>
+          {{ else }}
+            {{ .Title }}
+          {{ end }}
+        </h3>
+        {{ with .Params.coauthors }}<p class="coauthors">With {{ delimit . ", " " and " }}</p>{{ end }}
+        {{ $book := . }}{{ with .Params.booktitle }}<p class="book-meta">In: <em>{{ . }}</em>{{ with $book.Params.editors }}, ed. {{ . }}{{ end }}{{ with $book.Params.entry }} — {{ . }}{{ end }}</p>{{ end }}
+        {{ with .Params.series }}<p class="book-meta series">{{ . }}</p>{{ end }}
+        {{ with .Params.abstract }}
+        <details class="abstract-toggle">
+          <summary>Résumé</summary>
+          <p class="abstract">{{ . }}</p>
+        </details>
+        {{ end }}
+        <div class="entry-links">
+          {{ with .Params.book_url }}<a href="{{ . }}" class="link-pill" target="_blank">Publisher</a>{{ end }}
+          {{ with .Params.pdf }}<a href="{{ . }}" class="link-pill" target="_blank">PDF</a>{{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  document.querySelectorAll('.issue-read-more').forEach(btn => {
+    const wrap = btn.previousElementSibling;
+    if (wrap.scrollHeight <= wrap.clientHeight + 2) {
+      btn.hidden = true;
+      wrap.querySelector('.issue-fade').hidden = true;
+    }
+    btn.addEventListener('click', () => {
+      const collapsed = wrap.classList.toggle('collapsed');
+      btn.textContent = collapsed ? 'Read more' : 'Read less';
+    });
+  });
+</script>
+{{ end }}

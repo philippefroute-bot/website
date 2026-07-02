@@ -1,6 +1,7 @@
 ---
 title: "Is the crisis treatment exacerbating cautiousness or risk taking?"
 date: 2009-01-01
+weight: 50
 status: "Published"
 journal: "Applied Financial Economics, 20, 2009"
 coauthors: ["Olivier Damette"]

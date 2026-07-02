@@ -1,6 +1,7 @@
 ---
 title: "Borrowing behaviour of French regions: heterogeneity analysis"
 date: 2011-01-01
+weight: 40
 status: "Published"
 journal: "Revue économique, 62(5), 2011"
 coauthors: ["Gilles Dufrénot", "Christophe Schalck"]
