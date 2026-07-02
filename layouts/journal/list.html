@@ -28,8 +28,13 @@
       <div class="journal-issue-body">
         <div class="entry-meta">
           {{ if .Date }}<time>{{ .Date.Format "2006" }}</time>{{ end }}
-          {{ with .Params.volume }}<span class="journal">Vol. {{ . }}</span>{{ end }}
-          {{ with .Params.number }}<span class="journal">N° {{ . }}</span>{{ end }}
+          {{ if and .Params.volume .Params.number }}
+            {{ if .Params.issue_url }}
+              <a href="{{ .Params.issue_url }}" class="journal-vol-link" target="_blank" rel="noopener">Vol. {{ .Params.volume }} — Issue {{ .Params.number }}</a>
+            {{ else }}
+              <span class="journal">Vol. {{ .Params.volume }} — Issue {{ .Params.number }}</span>
+            {{ end }}
+          {{ end }}
         </div>
         <h2 class="journal-issue-title">
           {{ if .Params.issue_url }}

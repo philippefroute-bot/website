@@ -2,9 +2,10 @@
 title: "Teaching Sustainability in Higher Education: A European Perspective"
 date: 2023-12-01
 weight: 10
+volume: "1"
 number: "1"
 cover: "/img/journal-covers/rit-n1.jpg"
-issue_url: "https://journaleska.com/index.php/rit/issue/view/1112"
+issue_url: "https://journaleska.com/index.php/rit/issue/view/929"
 articles: []
 ---
 
