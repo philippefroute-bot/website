@@ -8,10 +8,15 @@
 
 <div class="container page-body">
 
-  {{/* 1. Description + Scope */}}
+  {{/* 1. Description + Scope topics */}}
   {{ if .Content }}
-  <div class="prose page-intro">
+  <div class="prose page-intro journal-intro">
     {{ .Content }}
+  </div>
+  {{ end }}
+  {{ with .Params.scope_topics }}
+  <div class="journal-scope">
+    {{ range . }}<span class="journal-scope-tag">{{ . }}</span>{{ end }}
   </div>
   {{ end }}
 

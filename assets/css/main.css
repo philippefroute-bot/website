@@ -737,6 +737,29 @@ body {
   .journal-issue-cover img { width: 100px; }
 }
 
+/* Journal intro — compact single paragraph */
+.journal-intro { margin-bottom: .75rem; }
+.journal-intro p { margin-bottom: 0; }
+
+/* Scope topics pills */
+.journal-scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: 2rem;
+}
+.journal-scope-tag {
+  display: inline-block;
+  padding: .2rem .65rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
 /* Journal submit block */
 .journal-submit-block {
   margin: 2.5rem 0;
