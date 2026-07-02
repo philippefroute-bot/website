@@ -13,7 +13,7 @@
   </div>
   {{ end }}
 
-  {{ $issues := .Pages | first 50 }}
+  {{ $issues := .Pages.ByDate.Reverse | first 50 }}
   {{ if $issues }}
   <div class="journal-issues">
     {{ range $issues }}

@@ -9,6 +9,7 @@ buildFuture = true
   name        = "Dr. Philippe FROUTÉ"
   role        = "Associate Professor in Economics"
   institution = "Université Paris-Est Créteil - France"
+  bio         = "Associate Professor in Economics at Université Paris-Est Créteil (UPEC), France. Research in Law and Economics, Public Economics, Public Finance, and Transitions Economics."
   email       = "philippe.froute@u-pec.fr"
   photo       = "/img/pic-2026.jpg"
   cv          = "/files/CV.pdf"

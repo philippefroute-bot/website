@@ -1,6 +1,7 @@
 ---
 title: "Research"
 subtitle: "Law and Economics · Public Economics · Public Finance · Transitions Economics"
+description: "Publications by Philippe FROUTÉ — Associate Professor in Economics at UPEC — spanning law and economics, public finance, sovereign debt, and transitions economics."
 summary: "Publications spanning law and economics, public finance, and transitions economics — from spatial effects of local borrowing and sovereign debt to the economic analysis of AI and bankruptcy law."
 ---
 

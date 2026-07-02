@@ -1,6 +1,7 @@
 ---
 title: "Teaching"
 subtitle: "Graduate and undergraduate courses in Economics"
+description: "Philippe FROUTÉ teaches economics at UPEC (Licence to Master) and as a visiting professor at universities in Taiwan, Germany, Switzerland, and China."
 summary: "Guest professor at universities in Taiwan, Germany, Switzerland, and China. At UPEC, coordinator of the doctoral Graduate Program in International Transitions, with courses from Licence to Master level."
 upec_program:
   title: "Graduate Program — International Transitions and the Enterprise of Tomorrow"

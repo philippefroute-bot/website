@@ -1,7 +1,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ site.Params.name }} | Economist{{ else }}{{ .Title }} | {{ site.Params.name }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.bio | truncate 160 }}{{ end }}">
+
+{{ $desc := "" }}
+{{ if .Description }}{{ $desc = .Description }}{{ else if site.Params.bio }}{{ $desc = site.Params.bio }}{{ end }}
+<meta name="description" content="{{ $desc | truncate 160 }}">
+<meta name="author" content="{{ site.Params.name }}">
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Params.name }} | Economist{{ else }}{{ .Title }} | {{ site.Params.name }}{{ end }}">
+<meta property="og:description" content="{{ $desc | truncate 160 }}">
+<meta property="og:image" content="{{ "img/pic-2026.jpg" | absURL }}">
+<meta property="og:site_name" content="{{ site.Params.name }}">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Params.name }} | Economist{{ else }}{{ .Title }} | {{ site.Params.name }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc | truncate 160 }}">
+<meta name="twitter:image" content="{{ "img/pic-2026.jpg" | absURL }}">
+
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Philippe FROUTÉ",
+  "givenName": "Philippe",
+  "familyName": "FROUTÉ",
+  "jobTitle": "Associate Professor in Economics",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Université Paris-Est Créteil (UPEC)",
+    "url": "https://www.u-pec.fr/"
+  },
+  "url": "{{ site.BaseURL }}",
+  "email": "{{ site.Params.email }}",
+  "sameAs": [
+    "{{ site.Params.scholar }}",
+    "{{ site.Params.ssrn }}",
+    "{{ site.Params.orcid }}",
+    "{{ site.Params.repec }}"
+  ],
+  "knowsAbout": ["Law and Economics", "Public Economics", "Public Finance", "Transitions Economics"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Université Paris 1 Panthéon-Sorbonne"
+  },
+  "description": "{{ site.Params.bio }}"
+}
+</script>
+{{ end }}
+
 {{ $css := resources.Get "css/main.css" | minify }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">

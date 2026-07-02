@@ -1,0 +1,28 @@
+# Philippe FROUTÉ — Academic Website
+
+> Philippe FROUTÉ is an Associate Professor in Economics at Université Paris-Est Créteil (UPEC), France. His research covers Law and Economics, Public Economics, Public Finance, and Transitions Economics, with emphasis on the economic analysis of regulation, the economics of debt, and transitions economics. He obtained his Habilitation à Diriger des Recherches (HDR) and supervises doctoral research at UPEC.
+
+## Website sections
+
+- [Home](https://philippefroute.fr/): Personal academic homepage
+- [Research](https://philippefroute.fr/research/): Peer-reviewed publications, book chapters, and working papers in Law and Economics, Public Finance, and Transitions Economics
+- [Teaching](https://philippefroute.fr/teaching/): Graduate and undergraduate courses at UPEC; visiting professor at STUST (Taiwan), Hochschule Osnabrück (Germany), Business School of Lausanne (Switzerland), Shanghai Normal University (China)
+- [Blog](https://philippefroute.fr/blog/): Essays and commentary on economics and policy
+- [International Transitions](https://philippefroute.fr/journal/): Peer-reviewed multidisciplinary journal on institutional, economic, and organizational change — Philippe FROUTÉ is a founding editor
+
+## Academic profiles
+
+- Google Scholar: https://scholar.google.com/citations?user=1rcJqkcAAAAJ&hl=en
+- SSRN: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=866934
+- ORCID: https://orcid.org/0000-0002-9220-5606
+- IDEAS/RePEC: https://ideas.repec.org/e/pfr154.html
+
+## Affiliation
+
+- Université Paris-Est Créteil (UPEC), France
+- Member of LIPHA research laboratory (Laboratoire Interdisciplinaire de Philosophie et Histoire de la Philosophie Appliquée)
+- Director of the Graduate Program on International Transitions and the Firm of Tomorrow, AEI International School
+
+## Contact
+
+Email: philippe.froute@u-pec.fr
