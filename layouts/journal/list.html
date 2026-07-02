@@ -51,7 +51,13 @@
             {{ .Title }}
           {{ end }}
         </h2>
-        {{ if .Content }}<div class="journal-issue-desc">{{ .Content }}</div>{{ end }}
+        {{ if .Content }}
+        <div class="issue-body-wrap collapsed">
+          <div class="journal-issue-desc">{{ .Content }}</div>
+          <div class="issue-fade"></div>
+        </div>
+        <button class="issue-read-more" type="button">Read more</button>
+        {{ end }}
         {{ with .Params.articles }}
         <div class="journal-toc">
           <h4 class="journal-toc-heading">Table of Contents</h4>
@@ -115,4 +121,20 @@
   {{ end }}
 
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  document.querySelectorAll('.issue-read-more').forEach(btn => {
+    const wrap = btn.previousElementSibling;
+    if (wrap.scrollHeight <= wrap.clientHeight + 2) {
+      btn.hidden = true;
+      wrap.querySelector('.issue-fade').hidden = true;
+    }
+    btn.addEventListener('click', () => {
+      const collapsed = wrap.classList.toggle('collapsed');
+      btn.textContent = collapsed ? 'Read more' : 'Read less';
+    });
+  });
+</script>
 {{ end }}

@@ -760,6 +760,36 @@ body {
   white-space: nowrap;
 }
 
+/* Issue description collapse */
+.issue-body-wrap {
+  position: relative;
+}
+.issue-body-wrap.collapsed {
+  max-height: 8.5rem;
+  overflow: hidden;
+}
+.issue-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3rem;
+  background: linear-gradient(transparent, var(--bg));
+  pointer-events: none;
+}
+.issue-body-wrap:not(.collapsed) .issue-fade { display: none; }
+.issue-read-more {
+  background: none;
+  border: none;
+  padding: .2rem 0;
+  margin-top: .25rem;
+  font-family: var(--font-sans);
+  font-size: .82rem;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.issue-read-more:hover { color: var(--accent-hover); }
+
 /* Journal submit block */
 .journal-submit-block {
   margin: 2.5rem 0;

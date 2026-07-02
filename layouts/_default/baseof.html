@@ -14,5 +14,6 @@
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
   </script>
+  {{ block "scripts" . }}{{ end }}
 </body>
 </html>
